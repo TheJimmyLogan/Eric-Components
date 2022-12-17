@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400;500&display=swap');
+
+        * {
+            font-family: 'Martian Mono', monospace;
+        }
+
+
+        .burger-menu span {
+            transition: all .2s ease-in-out;
+        }
+
+        .open span {
+            background: white;
+        }
+
+        .open span:nth-child(1) {
+            transform: rotate(45deg);
+
+        }
+
+        .open span:nth-child(2) {
+            opacity: 0
+        }
+
+        .open span:nth-child(3) {
+            transform: rotate(-45deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <main class="p-5">
+        <nav class="w-full flex items-center justify-between">
+            <a class="flex items-center gap-1" href="#">
+                <img class="w-9 h-9" src="./icons/logo.svg" alt="">
+                Eric components
+            </a>
+
+
+            <button class="w-9 h-9 burger-menu z-10 relative" id="burgerMenu">
+                <span class="w-9 h-[2px] bg-slate-800 block my-2 origin-top-left"></span>
+                <span class="w-9 h-[2px] bg-slate-800 block my-2"></span>
+                <span class="w-9 h-[2px] bg-slate-800 block my-2 origin-top-left "></span>
+            </button>
+
+            <section id="menuContainer"
+                class="bg-slate-800 text-white flex flex-col pt-16 p-5 absolute -right-full top-0 h-full transition-all w-1/2 ">
+                <button id="compMenu" class="flex items-center justify-between">
+                    <img class="rotate-180 w-7 transition-all duration-200" src="./icons/arrow-left.svg" alt="">
+                    components
+                </button>
+                <div id="compContainer" class="p-3 m-3 bg-white text-sm text-slate-800 flex flex-col rounded-md hidden">
+                    <a href="/components/autosearch/">Autofill search</a>
+                </div>
+                <a href="">
+                    about
+                </a>
+            </section>
+        </nav>
+        <h2 class="text-4xl text-center">Welcome</h2>
+    </main>
+
+
+</body>
+
+</html>
